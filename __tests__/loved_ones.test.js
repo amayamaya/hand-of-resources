@@ -73,7 +73,7 @@ describe('backend-express-template routes', () => {
     });
     console.log(resp.body);
     expect(resp.status).toBe(200);
-    expect(resp.body).toBe('HsuBear');
+    expect(resp.body.name).toBe('HsuBear');
   });
   afterAll(() => {
     pool.end();

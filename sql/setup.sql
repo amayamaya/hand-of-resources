@@ -1,7 +1,7 @@
 -- Use this file to define your SQL tables
 -- The SQL in this file will be executed when you run `npm run setup-db`
 DROP table if EXISTS loved_ones;
-DROP table if EXISTS sill_plants;
+DROP table if EXISTS office_plants;
 DROP table if EXISTS balcony_plants;
 DROP table if EXISTS candles;
 DROP table if EXISTS web_colors;
