@@ -54,6 +54,19 @@ describe('backend-express-template routes', () => {
       connection: 'Astrology',
     });
   });
+  it('#POST /lovedones should create a new loved one', async () => {
+    const newLovedOne = {
+      name: 'Victoria',
+      origin: 'Portland',
+      connection: 'Forge',
+    };
+    const resp = await request(app).post('/lovedones').send(newLovedOne);
+    expect(resp.status).toBe(200);
+    expect(resp.body).toEqual({
+      id: expect.any(String),
+      ...newLovedOne,
+    });
+  });
 
   afterAll(() => {
     pool.end();
