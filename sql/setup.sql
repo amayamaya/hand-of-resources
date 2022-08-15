@@ -1,11 +1,6 @@
 -- Use this file to define your SQL tables
 -- The SQL in this file will be executed when you run `npm run setup-db`
 DROP table if EXISTS loved_ones;
-DROP table if EXISTS office_plants;
-DROP table if EXISTS balcony_plants;
-DROP table if EXISTS candles;
-DROP table if EXISTS web_colors;
-
 CREATE TABLE loved_ones (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   name VARCHAR,
@@ -16,12 +11,12 @@ INSERT INTO loved_ones (name, origin, connection)
 VALUES 
 ('Natalie', 'LA', 'Astrology'),
 ('Mehregan', 'Austin', 'Art'),
-('Oriana', 'Portland', 'Lifetimes'),
+('Oriana', 'land', 'Lifetimes'),
 ('Alex', 'Nowhere, TX', 'Same Name'),
 ('Stephanie', 'Amarillo', 'Feels')
 ;
 
-
+DROP table if EXISTS office_plants;
 CREATE TABLE office_plants (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   name VARCHAR,
@@ -37,6 +32,7 @@ VALUES
 ('Superba', 'Lowes', 'Veining Foliage')
 ;
 
+DROP table if EXISTS balcony_plants;
 CREATE TABLE balcony_plants (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   name VARCHAR,
@@ -52,6 +48,7 @@ VALUES
 ('Fuchsias', 'Fred Meyer', 'Viny Plants with Vivid Pink, Purple, and White Blooms')
 ;
 
+DROP table if EXISTS candles;
 CREATE TABLE candles (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   name VARCHAR,
@@ -66,6 +63,7 @@ VALUES
 ('Citrus Bliss', 'Bergamot, Lime, and Sweet Orange', 'Red')
 ;
 
+DROP table if EXISTS web_colors;
 CREATE TABLE web_colors (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   name VARCHAR,

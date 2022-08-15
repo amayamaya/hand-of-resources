@@ -67,7 +67,7 @@ describe('backend-express-template routes', () => {
       ...newLovedOne,
     });
   });
-  it('#PUT /lovedones/:id should update an existing loved one', async () => {
+  it.only('#PUT /lovedones/:id should update an existing loved one', async () => {
     const resp = await request(app).put('/lovedones/1').send({
       name: 'HsuBear',
     });
