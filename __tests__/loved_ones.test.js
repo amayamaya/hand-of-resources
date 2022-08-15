@@ -67,7 +67,14 @@ describe('backend-express-template routes', () => {
       ...newLovedOne,
     });
   });
-
+  it('#PUT /lovedones/:id should update an existing loved one', async () => {
+    const resp = await request(app).put('/lovedones/1').send({
+      name: 'HsuBear',
+    });
+    console.log(resp.body);
+    expect(resp.status).toBe(200);
+    expect(resp.body).toBe('HsuBear');
+  });
   afterAll(() => {
     pool.end();
   });
