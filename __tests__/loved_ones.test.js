@@ -67,13 +67,20 @@ describe('backend-express-template routes', () => {
       ...newLovedOne,
     });
   });
-  it.only('#PUT /lovedones/:id should update an existing loved one', async () => {
+  it('#PUT /lovedones/:id should update an existing loved one', async () => {
     const resp = await request(app).put('/lovedones/1').send({
       name: 'HsuBear',
     });
     console.log(resp.body);
     expect(resp.status).toBe(200);
     expect(resp.body.name).toBe('HsuBear');
+  });
+  it.only('#DELETE /lovedones/:id should delete an existing loved one', async () => {
+    const resp = await request(app).delete('/lovedones/1');
+    expect(resp.status).toBe(200);
+
+    const lovedOneResp = await request(app).get('/lovedones/1');
+    expect(lovedOneResp.status).toBe(404);
   });
   afterAll(() => {
     pool.end();
