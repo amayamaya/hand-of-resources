@@ -8,7 +8,7 @@ describe('backend-express-template routes', () => {
     return setup(pool);
   });
 
-  it.only('#GET /lovedones should return a list of loved ones', async () => {
+  it('#GET /lovedones should return a list of loved ones', async () => {
     const resp = await request(app).get('/lovedones');
     expect(resp.status).toBe(200);
     expect(resp.body).toEqual([
@@ -43,6 +43,16 @@ describe('backend-express-template routes', () => {
         connection: 'Feels',
       },
     ]);
+  });
+  it('#GET lovedones/:id should return a single loved one', async () => {
+    const resp = await request(app).get('/lovedones/1');
+    expect(resp.status).toBe(200);
+    expect(resp.body).toEqual({
+      id: '1',
+      name: 'Natalie',
+      origin: 'LA',
+      connection: 'Astrology',
+    });
   });
 
   afterAll(() => {
