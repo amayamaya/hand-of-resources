@@ -7,8 +7,9 @@ describe('backend-express-template routes', () => {
   beforeEach(() => {
     return setup(pool);
   });
-  it('#GET /lovedones should return a list of loved ones', async () => {
-    const resp = await request(app).get('/loved_ones');
+
+  it.only('#GET /lovedones should return a list of loved ones', async () => {
+    const resp = await request(app).get('/lovedones');
     expect(resp.status).toBe(200);
     expect(resp.body).toEqual([
       {
@@ -43,6 +44,7 @@ describe('backend-express-template routes', () => {
       },
     ]);
   });
+
   afterAll(() => {
     pool.end();
   });
