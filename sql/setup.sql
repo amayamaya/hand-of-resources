@@ -11,7 +11,7 @@ INSERT INTO loved_ones (name, origin, connection)
 VALUES 
 ('Natalie', 'LA', 'Astrology'),
 ('Mehregan', 'Austin', 'Art'),
-('Oriana', 'land', 'Lifetimes'),
+('Oriana', 'Portland', 'Lifetimes'),
 ('Alex', 'Nowhere, TX', 'Same Name'),
 ('Stephanie', 'Amarillo', 'Feels')
 ;

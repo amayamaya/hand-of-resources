@@ -75,7 +75,7 @@ describe('backend-express-template routes', () => {
     expect(resp.status).toBe(200);
     expect(resp.body.name).toBe('HsuBear');
   });
-  it.only('#DELETE /lovedones/:id should delete an existing loved one', async () => {
+  it('#DELETE /lovedones/:id should delete an existing loved one', async () => {
     const resp = await request(app).delete('/lovedones/1');
     expect(resp.status).toBe(200);
 
