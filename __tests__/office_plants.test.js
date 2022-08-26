@@ -1,0 +1,49 @@
+const pool = require('../lib/utils/pool');
+const setup = require('../data/setup');
+const request = require('supertest');
+const app = require('../lib/app');
+
+describe('office plants routes', () => {
+  beforeEach(() => {
+    return setup(pool);
+  });
+  afterAll(() => {
+    pool.end();
+  });
+  it('#GET /officeplants should return a list of office plants', async () => {
+    const resp = await request(app).get('/officeplants');
+    expect(resp.status).toBe(200);
+    expect(resp.body).toEqual([
+      {
+        id: '1',
+        name: 'Spider Plant',
+        origin: 'OfferUp',
+        features: 'Babies on Babies',
+      },
+      {
+        id: '2',
+        name: 'Baby Rubber Plant',
+        origin: 'OfferUp',
+        features: 'Cool non-flower',
+      },
+      {
+        id: '3',
+        name: 'Peace Lily',
+        origin: 'OfferUp',
+        features: 'Rainforest Vibes',
+      },
+      {
+        id: '4',
+        name: 'Satin Pothos',
+        origin: 'OfferUp',
+        features: 'Silver Freckles',
+      },
+      {
+        id: '5',
+        name: 'Superba',
+        origin: 'Lowes',
+        features: 'Veining Foliage',
+      },
+    ]);
+  });
+});
