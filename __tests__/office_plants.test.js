@@ -17,7 +17,7 @@ describe('office plants routes', () => {
       {
         id: '1',
         name: 'Spider Plant',
-        origin: 'OfferUp',
+        origin: 'Woodstock Harware',
         features: 'Babies on Babies',
       },
       {
