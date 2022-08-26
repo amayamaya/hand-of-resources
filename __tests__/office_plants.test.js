@@ -56,4 +56,17 @@ describe('office plants routes', () => {
       features: 'Babies on Babies',
     });
   });
+  it('#POST /officeplants should create a new office plant', async () => {
+    const newOfficePlant = {
+      name: 'Trailing Pothos',
+      origin: 'Victoria',
+      features: 'Luscious foliage',
+    };
+    const resp = await request(app).post('/officeplants').send(newOfficePlant);
+    expect(resp.status).toBe(201);
+    expect(resp.body).toEqual({
+      id: expect.any(String),
+      ...newOfficePlant,
+    });
+  });
 });
