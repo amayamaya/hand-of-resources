@@ -56,4 +56,19 @@ describe('balcony plants routes', () => {
       features: 'Tall with Blue Blooms',
     });
   });
+  it('#POST /balconyplants should create a new balcony plant', async () => {
+    const newBalconyPlant = {
+      name: 'Peppers',
+      origin: 'Adrian',
+      features: 'Babies',
+    };
+    const resp = await request(app)
+      .post('/balconyplants')
+      .send(newBalconyPlant);
+    expect(resp.status).toBe(200);
+    expect(resp.body).toEqual({
+      id: expect.any(String),
+      ...newBalconyPlant,
+    });
+  });
 });
