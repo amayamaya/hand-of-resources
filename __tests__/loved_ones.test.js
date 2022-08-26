@@ -71,7 +71,7 @@ describe('loved ones routes', () => {
     const resp = await request(app).put('/lovedones/1').send({
       name: 'HsuBear',
     });
-    console.log(resp.body);
+    // console.log(resp.body);
     expect(resp.status).toBe(200);
     expect(resp.body.name).toBe('HsuBear');
   });
