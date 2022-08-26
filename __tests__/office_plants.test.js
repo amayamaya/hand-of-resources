@@ -69,4 +69,11 @@ describe('office plants routes', () => {
       ...newOfficePlant,
     });
   });
+  it('#PUT /officeplants/:id should update an existing office plant', async () => {
+    const resp = await request(app).put('/officeplants/1').send({
+      features: 'Veining Foliage with blooms',
+    });
+    expect(resp.status).toBe(200);
+    expect(resp.body).toEqual('Veining Foliage with blooms');
+  });
 });
