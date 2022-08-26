@@ -46,4 +46,14 @@ describe('balcony plants routes', () => {
       },
     ]);
   });
+  //   it('#GET balconyplants/:id should return a single balcony plant', async () => {
+  //     const resp = await request(app).get('/balconyplants/1');
+  //     expect(resp.status).toBe(200);
+  //     expect(resp.body).toEqual({
+  //       id: '1',
+  //       name: 'Delphiniums',
+  //       origin: 'Bi-Mart',
+  //       features: 'Tall with Blue Blooms',
+  //     });
+  //   });
 });

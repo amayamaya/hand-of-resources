@@ -17,7 +17,7 @@ describe('office plants routes', () => {
       {
         id: '1',
         name: 'Spider Plant',
-        origin: 'Woodstock Harware',
+        origin: 'Woodstock Hardware',
         features: 'Babies on Babies',
       },
       {
@@ -45,5 +45,15 @@ describe('office plants routes', () => {
         features: 'Veining Foliage',
       },
     ]);
+  });
+  it('#GET officeplants/:id should return a single office plant', async () => {
+    const resp = await request(app).get('/officeplants/1');
+    expect(resp.status).toBe(200);
+    expect(resp.body).toEqual({
+      id: '1',
+      name: 'Spider Plant',
+      origin: 'Woodstock Hardware',
+      features: 'Babies on Babies',
+    });
   });
 });

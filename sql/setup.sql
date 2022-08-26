@@ -25,7 +25,7 @@ CREATE TABLE office_plants (
 );
 INSERT INTO office_plants (name, origin, features)
 VALUES 
-('Spider Plant', 'Woodstock Harware', 'Babies on Babies'),
+('Spider Plant', 'Woodstock Hardware', 'Babies on Babies'),
 ('Baby Rubber Plant', 'OfferUp', 'Cool non-flower'),
 ('Peace Lily', 'OfferUp', 'Rainforest Vibes'),
 ('Satin Pothos', 'OfferUp', 'Silver Freckles'),
