@@ -76,4 +76,11 @@ describe('office plants routes', () => {
     expect(resp.status).toBe(200);
     expect(resp.body).toEqual('Veining Foliage with blooms');
   });
+  it('#DELETE /officeplants/:id should delete an existing office plant', async () => {
+    const resp = await request(app).delete('/officeplants/1');
+    expect(resp.status).toBe(200);
+
+    const officePlantsResp = await request(app).get('/officeplants/1');
+    expect(officePlantsResp.status).toBe(404);
+  });
 });
