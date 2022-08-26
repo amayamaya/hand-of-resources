@@ -81,4 +81,12 @@ describe('balcony plants routes', () => {
     expect(resp.status).toBe(200);
     expect(resp.body.name).toEqual('Hatch Green Chile Peppers');
   });
+
+  it('#DELETE /balconyplants/:id should delete an existing balcony plant', async () => {
+    const resp = await request(app).delete('/balconyplants/1');
+    expect(resp.status).toBe(200);
+
+    const balconyPlantsResp = await request(app).get('/balconyplants');
+    expect(balconyPlantsResp.body).toBe(404);
+  });
 });
