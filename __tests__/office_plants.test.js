@@ -74,7 +74,7 @@ describe('office plants routes', () => {
       features: 'Veining Foliage with blooms',
     });
     expect(resp.status).toBe(200);
-    expect(resp.body).toEqual('Veining Foliage with blooms');
+    expect(resp.body.features).toEqual('Veining Foliage with blooms');
   });
   it('#DELETE /officeplants/:id should delete an existing office plant', async () => {
     const resp = await request(app).delete('/officeplants/1');
