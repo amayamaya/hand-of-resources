@@ -60,10 +60,10 @@ describe('office plants routes', () => {
     const newOfficePlant = {
       name: 'Trailing Pothos',
       origin: 'Victoria',
-      features: 'Luscious foliage',
+      features: 'Luscious Foliage',
     };
     const resp = await request(app).post('/officeplants').send(newOfficePlant);
-    expect(resp.status).toBe(201);
+    expect(resp.status).toBe(200);
     expect(resp.body).toEqual({
       id: expect.any(String),
       ...newOfficePlant,
