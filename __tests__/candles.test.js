@@ -38,16 +38,17 @@ describe('candles routes', () => {
       },
     ]);
   });
-  it('#GET candles/:id should return a single loved one', async () => {
+  it('#GET candles/:id should return a single candle', async () => {
     const resp = await request(app).get('/candles/1');
     expect(resp.status).toBe(200);
     expect(resp.body).toEqual({
       id: '1',
       name: 'Abuela Rose',
+      scent: 'Rose',
       color: 'Pink',
     });
   });
-  // it('#POST /candles should create a new loved one', async () => {
+  // it('#POST /candles should create a new candle', async () => {
   //   const newLovedOne = {
   //     name: 'Blue Fields',
   //     scent: 'Floral',
@@ -60,7 +61,7 @@ describe('candles routes', () => {
   //     ...newLovedOne,
   //   });
   // });
-  // it('#PUT /candles/:id should update an existing loved one', async () => {
+  // it('#PUT /candles/:id should update an existing candle', async () => {
   //   const resp = await request(app).put('/candles/1').send({
   //     name: 'HsuBear',
   //   });
@@ -68,7 +69,7 @@ describe('candles routes', () => {
   //   expect(resp.status).toBe(200);
   //   expect(resp.body.name).toBe('HsuBear');
   // });
-  // it('#DELETE /candles/:id should delete an existing loved one', async () => {
+  // it('#DELETE /candles/:id should delete an existing candle', async () => {
   //   const resp = await request(app).delete('/candles/1');
   //   expect(resp.status).toBe(200);
 
