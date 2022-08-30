@@ -49,16 +49,16 @@ describe('candles routes', () => {
     });
   });
   it('#POST /candles should create a new candle', async () => {
-    const newLovedOne = {
+    const newCandle = {
       name: 'Blue Fields',
       scent: 'Floral',
       color: 'Blue',
     };
-    const resp = await request(app).post('/candles').send(newLovedOne);
+    const resp = await request(app).post('/candles').send(newCandle);
     expect(resp.status).toBe(200);
     expect(resp.body).toEqual({
       id: expect.any(String),
-      ...newLovedOne,
+      ...newCandle,
     });
   });
   // it('#PUT /candles/:id should update an existing candle', async () => {
@@ -73,8 +73,8 @@ describe('candles routes', () => {
   //   const resp = await request(app).delete('/candles/1');
   //   expect(resp.status).toBe(200);
 
-  //   const lovedOneResp = await request(app).get('/candles/1');
-  //   expect(lovedOneResp.status).toBe(404);
+  //   const candleResp = await request(app).get('/candles/1');
+  //   expect(candleResp.status).toBe(404);
   // });
   afterAll(() => {
     pool.end();
