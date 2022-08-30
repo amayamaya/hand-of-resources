@@ -48,19 +48,19 @@ describe('candles routes', () => {
       color: 'Pink',
     });
   });
-  // it('#POST /candles should create a new candle', async () => {
-  //   const newLovedOne = {
-  //     name: 'Blue Fields',
-  //     scent: 'Floral',
-  //     color: 'Blue'
-  //   };
-  //   const resp = await request(app).post('/candles').send(newLovedOne);
-  //   expect(resp.status).toBe(200);
-  //   expect(resp.body).toEqual({
-  //     id: expect.any(String),
-  //     ...newLovedOne,
-  //   });
-  // });
+  it('#POST /candles should create a new candle', async () => {
+    const newLovedOne = {
+      name: 'Blue Fields',
+      scent: 'Floral',
+      color: 'Blue',
+    };
+    const resp = await request(app).post('/candles').send(newLovedOne);
+    expect(resp.status).toBe(200);
+    expect(resp.body).toEqual({
+      id: expect.any(String),
+      ...newLovedOne,
+    });
+  });
   // it('#PUT /candles/:id should update an existing candle', async () => {
   //   const resp = await request(app).put('/candles/1').send({
   //     name: 'HsuBear',
