@@ -38,15 +38,15 @@ describe('candles routes', () => {
       },
     ]);
   });
-  // it('#GET candles/:id should return a single loved one', async () => {
-  //   const resp = await request(app).get('/candles/1');
-  //   expect(resp.status).toBe(200);
-  //   expect(resp.body).toEqual({
-  //     id: '1',
-  //     name: 'Abuela Rose',
-  //     color: 'Pink',
-  //   });
-  // });
+  it('#GET candles/:id should return a single loved one', async () => {
+    const resp = await request(app).get('/candles/1');
+    expect(resp.status).toBe(200);
+    expect(resp.body).toEqual({
+      id: '1',
+      name: 'Abuela Rose',
+      color: 'Pink',
+    });
+  });
   // it('#POST /candles should create a new loved one', async () => {
   //   const newLovedOne = {
   //     name: 'Blue Fields',
