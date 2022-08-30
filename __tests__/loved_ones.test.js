@@ -75,6 +75,7 @@ describe('loved ones routes', () => {
     expect(resp.status).toBe(200);
     expect(resp.body.name).toBe('HsuBear');
   });
+
   it('#DELETE /lovedones/:id should delete an existing loved one', async () => {
     const resp = await request(app).delete('/lovedones/1');
     expect(resp.status).toBe(200);
@@ -82,6 +83,7 @@ describe('loved ones routes', () => {
     const lovedOneResp = await request(app).get('/lovedones/1');
     expect(lovedOneResp.status).toBe(404);
   });
+  
   afterAll(() => {
     pool.end();
   });

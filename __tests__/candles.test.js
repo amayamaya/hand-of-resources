@@ -61,6 +61,7 @@ describe('candles routes', () => {
       ...newCandle,
     });
   });
+
   it('#PUT /candles/:id should update an existing candle', async () => {
     const resp = await request(app).put('/candles/4').send({
       color: 'white',
@@ -69,13 +70,16 @@ describe('candles routes', () => {
     expect(resp.status).toBe(200);
     expect(resp.body.color).toBe('white');
   });
-  // it('#DELETE /candles/:id should delete an existing candle', async () => {
-  //   const resp = await request(app).delete('/candles/1');
-  //   expect(resp.status).toBe(200);
 
-  //   const candleResp = await request(app).get('/candles/1');
-  //   expect(candleResp.status).toBe(404);
-  // });
+  it('#DELETE /candles/:id should delete an existing candle', async () => {
+    const resp = await request(app).delete('/candles/1');
+    console.log('hey respbody', resp.body);
+    expect(resp.status).toBe(200);
+
+    const candleResp = await request(app).get('/candles/1');
+    expect(candleResp.status).toBe(404);
+  });
+
   afterAll(() => {
     pool.end();
   });
