@@ -63,11 +63,11 @@ describe('candles routes', () => {
   });
   it('#PUT /candles/:id should update an existing candle', async () => {
     const resp = await request(app).put('/candles/4').send({
-      color: 'red',
+      color: 'white',
     });
     // console.log(resp.body);
     expect(resp.status).toBe(200);
-    expect(resp.body.name).toBe('white');
+    expect(resp.body.color).toBe('white');
   });
   // it('#DELETE /candles/:id should delete an existing candle', async () => {
   //   const resp = await request(app).delete('/candles/1');
