@@ -57,7 +57,7 @@ CREATE TABLE candles (
 );
 INSERT INTO candles (name, scent, color)
 VALUES 
-('Abuala Rose', 'Rose', 'Pink'),
+('Abuela Rose', 'Rose', 'Pink'),
 ('Lavender Crisp', 'Lavender', 'Purple'),
 ('Moon Milk', 'Jasmine and Peach', 'White'),
 ('Citrus Bliss', 'Bergamot, Lime, and Sweet Orange', 'Red')

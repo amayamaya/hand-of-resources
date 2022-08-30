@@ -15,21 +15,25 @@ describe('candles routes', () => {
       {
         id: '1',
         name: 'Abuela Rose',
+        scent: 'Rose',
         color: 'Pink',
       },
       {
         id: '2',
         name: 'Lavender Crisp',
+        scent: 'Lavender',
         color: 'Purple',
       },
       {
         id: '3',
         name: 'Moon Milk',
+        scent: 'Jasmine and Peach',
         color: 'White',
       },
       {
         id: '4',
         name: 'Citrus Bliss',
+        scent: 'Bergamot, Lime, and Sweet Orange',
         color: 'Red',
       },
     ]);
