@@ -61,14 +61,14 @@ describe('candles routes', () => {
       ...newCandle,
     });
   });
-  // it('#PUT /candles/:id should update an existing candle', async () => {
-  //   const resp = await request(app).put('/candles/1').send({
-  //     name: 'HsuBear',
-  //   });
-  //   // console.log(resp.body);
-  //   expect(resp.status).toBe(200);
-  //   expect(resp.body.name).toBe('HsuBear');
-  // });
+  it('#PUT /candles/:id should update an existing candle', async () => {
+    const resp = await request(app).put('/candles/4').send({
+      color: 'red',
+    });
+    // console.log(resp.body);
+    expect(resp.status).toBe(200);
+    expect(resp.body.name).toBe('white');
+  });
   // it('#DELETE /candles/:id should delete an existing candle', async () => {
   //   const resp = await request(app).delete('/candles/1');
   //   expect(resp.status).toBe(200);
